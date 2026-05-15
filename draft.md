@@ -54,7 +54,33 @@ cubic kernel from a small power-kernel family. Third, we state a sign-stability
 policy for interpreting reconstructed diagnostic points whose median sign is
 method-sensitive.
 
-## 2. Minimal Effective Disclosure
+## 2. Relation To Existing Diagnostic Ideas
+
+The present construction is closest in spirit to a consistency diagnostic, not
+to a replacement background cosmology. In a standard FLRW interpretation,
+distances, expansion rates, and curvature relations are locked together by the
+assumed homogeneous geometry. A violation of one of these relations can point
+to several different mechanisms: altered large-scale expansion, altered light
+propagation, averaging effects, or reconstruction artifacts. This is why the
+same residual pattern can be read very differently depending on whether one is
+testing optical propagation, backreaction, or modified dynamics.
+
+The finite-memory operator introduced here is designed to sit at this
+interface. It does not start by changing the background Friedmann equations.
+Instead, it asks whether a projected diagnostic response can carry a bounded
+memory of accumulated depth. This makes it naturally comparable to
+Dyer-Roeder-type optical reasoning, where light propagation through clumpy
+matter is separated from the homogeneous reference law, and to modern
+backreaction tests, where averaged expansion and observed distance relations
+need not encode the same effective geometry.
+
+The important difference is that the operator below is not an additional
+free-form fitting function. Its amplitude and shape are constrained before the
+diagnostic comparison. This is the main methodological point: the operator is
+allowed to be phenomenological, but it is not allowed to become arbitrarily
+elastic after seeing the reconstructed envelope.
+
+## 3. Minimal Effective Disclosure
 
 Only the effective module needed for this note is used. We assume that an
 observed consistency residual can be represented as a projected response over a
@@ -91,7 +117,22 @@ this note. The comparison is organized around whether the locked multiplicative
 memory factor can keep the projected K2 response inside the reconstructed
 diagnostic envelope under the predeclared amplitude and shape rules.
 
-## 3. Passive Memory Bound
+Several assumptions are therefore intentionally modest:
+
+- the coordinate $x$ is a diagnostic ordering variable, not a new directly
+  measured cosmological coordinate;
+- the operator $W(x)$ is an effective response, not a complete field equation;
+- the reconstructed envelopes are treated as diagnostic targets, not as final
+  likelihood surfaces;
+- the public module does not require the reader to accept any hidden parent
+  ontology.
+
+These restrictions make the paper weaker than a full theory paper, but stronger
+as a falsifiable method note. A reader can reject or test the effective module
+without needing to adjudicate the larger research program from which it was
+distilled.
+
+## 4. Passive Memory Bound
 
 The passive memory-budget condition requires the accumulated tail response not
 to exceed the unit local response budget. For the cubic operator,
@@ -118,7 +159,19 @@ This is the key discipline of the construction: the memory depth is bounded
 before the diagnostic comparison. The bound is not chosen by looking for the
 best residual fit.
 
-## 4. Kernel-Shape Selection
+The word "passive" is used in this limited sense only. It means that the memory
+tail does not carry more integrated response budget than the local baseline
+term over the normalized interval. It does not mean that the underlying
+cosmology is static, nor that no physical energy exchange is possible in a
+deeper model. For this paper, passivity is simply a guard against an
+uncontrolled late-depth amplification.
+
+This bound also gives an immediate falsification handle. If a diagnostic
+comparison requires $\rho > 4$ in order to remain compatible with the target
+envelope, the locked passive operator has failed. The model is not then
+rescued by expanding the allowed amplitude range.
+
+## 5. Kernel-Shape Selection
 
 The cubic kernel is selected from the power-kernel family
 
@@ -158,7 +211,20 @@ W(x) = 1 + \rho x^3,\qquad
 \rho \in [3.00,4.00].
 $$
 
-## 5. Diagnostic Targets And Gate Policy
+The two shape rules encode a compromise. A linear or quadratic memory term
+becomes visible too early and risks contaminating the low-depth regime where
+the baseline diagnostic response should remain dominant. Higher powers delay
+the response more strongly, but at the cost of concentrating the correction too
+close to the endpoint. The cubic term is therefore not claimed to be uniquely
+fundamental; it is the lowest simple power that is late enough at low depth
+while not being too endpoint-like.
+
+This distinction matters for interpretation. The paper does not say that
+cosmology "must" use a cubic memory law. It says that, inside this deliberately
+small power-kernel audit, the cubic law is the locked representative that
+survives the predeclared admissibility rules.
+
+## 6. Diagnostic Targets And Gate Policy
 
 The targets used here are reconstructed diagnostic envelopes rather than direct
 published likelihoods. The comparison is therefore deliberately separated into
@@ -202,7 +268,33 @@ question: whether the prediction violates a sign that is stable across
 reconstruction choices. Only the second question is used as a paper-level
 diagnostic pass/fail rule here.
 
-## 6. Results
+## 7. Source-Split Interpretation
+
+The BAO-only and SN+BAO diagnostics are not interchangeable. BAO-only
+reconstructions are comparatively closer to a distance-scale consistency test,
+while SN+BAO combinations mix distance ladder information and reconstruction
+choices in a way that can sharpen or destabilize local features. A finite
+memory operator should therefore not be judged only by whether it follows a
+single reconstructed median. It should also be judged by whether a claimed
+failure is robust across reconstruction families.
+
+In the present packet, this is exactly where the localized SN+BAO warning
+appears. The strict median-sign comparison identifies a point near `z=1.1925`
+where the median sign is negative while the locked K2 response does not follow
+that sign. The reconstruction audit, however, indicates that this sign is not
+stable across the tested method/degree families. Lower-degree reconstructions
+favor the opposite sign, while higher-degree reconstructions pull the median
+negative.
+
+The sign-stability policy is intended to prevent this point from being used in
+either direction too aggressively. It should not be hidden, because it is a
+real stress point for the diagnostic. It should also not be promoted to a hard
+falsification, because the sign being tested is reconstruction-sensitive. The
+paper-level statement is therefore deliberately asymmetric: the point remains a
+warning, but not a locked failure under the envelope and normalized-residual
+gate.
+
+## 8. Results
 
 The minimal result summary is:
 
@@ -231,7 +323,36 @@ SN+BAO sign-stability-aware gate: diagnostic pass
 claim level: theory-method diagnostic, not observational discovery
 ```
 
-## 7. Expected Significance
+## 9. Robustness And Falsification Criteria
+
+The current evidence is deliberately weaker than a full likelihood. For that
+reason, it is useful to state what would make the finite-memory diagnostic fail
+or become substantially less interesting.
+
+The diagnostic would fail in its present form if:
+
+- the BAO-only envelope overlap disappeared under the same locked K2 window;
+- sign-stable SN+BAO points required the opposite sign from the locked
+  prediction;
+- compatibility required $\rho > 4$ or a different kernel power chosen after
+  seeing the envelope;
+- the localized SN+BAO warning became sign-stable under a stronger
+  reconstruction audit;
+- a full covariance likelihood rejected the whole locked window rather than
+  merely shifting the best point inside it.
+
+Conversely, the diagnostic would become more interesting if the same locked
+window survived a covariance-aware likelihood test, if independent
+reconstructions selected a similar late-depth response shape, or if
+backreaction-aware and optical-propagation tests separated in a way naturally
+tracked by the K2 window.
+
+These criteria are included to keep the method honest. The finite-memory
+operator is useful only if it remains constrained. If it must be repeatedly
+relaxed to follow each new diagnostic reconstruction, it loses the main
+advantage of being predeclared.
+
+## 10. Expected Significance
 
 The main significance of the construction is not that it proves a new
 cosmological model. Its value is methodological:
@@ -251,7 +372,7 @@ method-level modified-gravity phenomenology. The higher-impact route requires
 a later full covariance or shrinkage-covariance likelihood comparison with
 direct public likelihood products.
 
-## 8. Limitations
+## 11. Limitations
 
 This manuscript is a theory-method diagnostic note. It does not claim:
 
@@ -265,7 +386,34 @@ The next stage is a paper-aligned likelihood comparison using covariance or
 shrinkage-covariance products and direct published likelihood data where
 available.
 
-## 9. Conclusion
+The most important limitation is that the public packet contains distilled
+diagnostic summaries rather than the full reconstruction pipeline. This is
+acceptable for a method note whose purpose is to define a bounded operator and
+state claim boundaries, but it is not sufficient for an observational paper.
+The current manuscript should therefore be read as a bridge: it turns an
+internal cosmology-branch result into a public, testable effective module, while
+leaving the stronger likelihood comparison for a later release.
+
+## 12. Future Likelihood Program
+
+The next technical step is to replace the diagonal/envelope diagnostic with a
+likelihood-level comparison. At minimum, this requires public likelihood or
+data products, a covariance or shrinkage-covariance prescription, and a frozen
+mapping from the reconstructed observable to the finite-memory diagnostic
+coordinate $x$.
+
+A useful future workflow is:
+
+```text
+freeze K2 window -> ingest public likelihood products -> build covariance-aware
+diagnostic -> compare locked window -> report posterior support or rejection
+```
+
+This future comparison should not widen the K2 window unless a new paper is
+explicitly framed as a different model. The main value of the present note is
+that it fixes a small target before the stronger test is performed.
+
+## 13. Conclusion
 
 We have defined a finite-memory projection correction as a bounded diagnostic
 operator rather than as a complete cosmological model. The locked cubic form
@@ -285,7 +433,7 @@ The result is therefore a paper-ready method claim, not an observational
 discovery claim. Its next meaningful test is a covariance-aware likelihood
 comparison against public likelihood data.
 
-## 10. Data And Code Availability
+## 14. Data And Code Availability
 
 This draft uses a distilled diagnostic packet rather than a direct public
 likelihood product. The public repository contains the manuscript scaffold, the
