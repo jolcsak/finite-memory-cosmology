@@ -47,6 +47,13 @@ validate a full underlying theory. Instead, we ask whether a predeclared,
 bounded projection-memory operator can define a reproducible diagnostic window
 and survive basic source-split stress tests.
 
+The contribution is therefore threefold. First, we define a finite-memory
+operator whose amplitude is bounded before comparison with reconstructed
+diagnostics. Second, we give an explicit shape-selection rule that fixes the
+cubic kernel from a small power-kernel family. Third, we state a sign-stability
+policy for interpreting reconstructed diagnostic points whose median sign is
+method-sensitive.
+
 ## 2. Minimal Effective Disclosure
 
 Only the effective module needed for this note is used. We assume that an
@@ -78,6 +85,11 @@ $$
 The form is intentionally simple. Its purpose is to test whether a bounded,
 delayed, monotone memory response can be made reproducible before comparison
 with diagnostic envelopes.
+
+The baseline shape $K_1(x)$ is not treated as a fitted degree of freedom in
+this note. The comparison is organized around whether the locked multiplicative
+memory factor can keep the projected K2 response inside the reconstructed
+diagnostic envelope under the predeclared amplitude and shape rules.
 
 ## 3. Passive Memory Bound
 
@@ -158,6 +170,22 @@ sign-unstable reconstructed point -> envelope / diagonal residual gate
 controls and extrapolations       -> stress diagnostics only
 ```
 
+Operationally, let $y_i$ denote the reconstructed diagnostic median at the
+tested point $i$, and let $[L_i,U_i]$ denote the corresponding reconstructed
+diagnostic envelope. A locked prediction $\hat y_i$ passes the envelope gate
+when
+
+$$
+L_i \leq \hat y_i \leq U_i .
+$$
+
+If a diagonal diagnostic width $\sigma_i$ is available, the normalized residual
+gate is
+
+$$
+\left|\hat y_i-y_i\right|/\sigma_i \leq 1 .
+$$
+
 A reconstructed point is sign-stable only when the relevant method/degree
 families agree on the sign of the diagnostic median. If the reconstruction
 sign is method-sensitive, the median sign is not used as a hard falsifier.
@@ -166,6 +194,13 @@ and have a normalized residual not exceeding one standard diagnostic width.
 
 This policy is not a substitute for a full likelihood. It is a triage rule that
 prevents a method-sensitive reconstructed median from being overinterpreted.
+
+This distinction is important for the SN+BAO stress test below. A strict
+median-sign gate asks whether the prediction follows the sign of one
+reconstructed median. The sign-stability gate asks a weaker but better-posed
+question: whether the prediction violates a sign that is stable across
+reconstruction choices. Only the second question is used as a paper-level
+diagnostic pass/fail rule here.
 
 ## 6. Results
 
@@ -230,7 +265,27 @@ The next stage is a paper-aligned likelihood comparison using covariance or
 shrinkage-covariance products and direct published likelihood data where
 available.
 
-## 9. Data And Code Availability
+## 9. Conclusion
+
+We have defined a finite-memory projection correction as a bounded diagnostic
+operator rather than as a complete cosmological model. The locked cubic form
+$W(x)=1+\rho x^3$ follows from a passive memory budget and a simple
+shape-selection audit over power kernels. With $\rho \leq 4$, the operator gives
+a compact K2 diagnostic window that can be compared against reconstructed
+cosmological consistency envelopes without fitting the memory depth after the
+fact.
+
+Within the distilled diagnostic packet used here, the locked K2 window is
+compatible with the BAO-only envelope and passes the reconstruction-aware
+SN+BAO sign-stability gate. The strict SN+BAO median-sign warning is retained
+as a limitation rather than hidden: it marks a reconstruction-sensitive point
+that should be revisited with direct likelihood products.
+
+The result is therefore a paper-ready method claim, not an observational
+discovery claim. Its next meaningful test is a covariance-aware likelihood
+comparison against public likelihood data.
+
+## 10. Data And Code Availability
 
 This draft uses a distilled diagnostic packet rather than a direct public
 likelihood product. The public repository contains the manuscript scaffold, the
