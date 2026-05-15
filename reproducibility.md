@@ -45,7 +45,8 @@ full Tau Core theory: intentionally not included
 ## Generate PDF
 
 ```bash
-python make_pdf.py
+python3 -m pip install -r requirements.txt
+python3 make_pdf.py
 ```
 
 Generated output:

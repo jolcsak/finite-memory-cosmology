@@ -42,6 +42,13 @@ The paper must not claim that:
 - `evidence/result_summary.csv`: minimal result table for the draft.
 - `evidence/source_packet_manifest.csv`: source packet map.
 
+## Regenerate The PDF
+
+```text
+python3 -m pip install -r requirements.txt
+python3 make_pdf.py
+```
+
 ## Relation To Tau Core
 
 The paper exposes only an effective cosmology module: projected depth, passive

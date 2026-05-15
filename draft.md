@@ -1,5 +1,7 @@
 # Finite-Memory Projection Corrections In Cosmological Consistency Diagnostics
 
+Working manuscript draft. Current claim level: theory-method diagnostic.
+
 ## Abstract
 
 We introduce a bounded finite-memory projection operator for diagnostic
@@ -25,13 +27,17 @@ sampling, reconstruction convention, averaging, or the choice of observable
 combination.
 
 Heinesen and Clifton recently emphasized that broad classes of cosmological
-models can be separated by how they violate FLRW curvature-consistency tests.
+models can be separated by how they violate FLRW curvature-consistency tests
+[1].
 They isolate two especially relevant routes: deviations in optical properties
-and deviations in large-scale expansion. Koksbang then applied this kind of
+and deviations in large-scale expansion. This is naturally adjacent to the
+older Dyer-Roeder optical-distance tradition, where light propagation through
+clumpy matter distributions is treated separately from the homogeneous
+background distance law [3,4]. Koksbang then applied this kind of
 observable logic to constrain cosmic backreaction over an extended redshift
 range, finding consistency with vanishing backreaction at one standard
 deviation while also emphasizing that significant backreaction is not yet ruled
-out. These papers are useful here because they make the main methodological
+out [2]. These papers are useful here because they make the main methodological
 lesson sharp: a projected cosmological residual must be tested against optical,
 geometrical, and reconstruction degeneracies before it is interpreted.
 
@@ -224,13 +230,42 @@ The next stage is a paper-aligned likelihood comparison using covariance or
 shrinkage-covariance products and direct published likelihood data where
 available.
 
+## 9. Data And Code Availability
+
+This draft uses a distilled diagnostic packet rather than a direct public
+likelihood product. The public repository contains the manuscript scaffold, the
+current PDF renderer, and compact result tables used in this note. The current
+diagnostic evidence files are:
+
+- `evidence/result_summary.csv`;
+- `evidence/claim_matrix.csv`;
+- `evidence/source_packet_manifest.csv`.
+
+The PDF can be regenerated locally with:
+
+```text
+python3 -m pip install -r requirements.txt
+python3 make_pdf.py
+```
+
+The underlying comparison should be treated as a reconstruction-level
+diagnostic until direct likelihood products or covariance/shrinkage-covariance
+inputs are added.
+
 ## References
 
-- A. Heinesen and T. Clifton, "Observational Tests for Distinguishing Classes
-  of Cosmological Models", arXiv:2604.07244, 2026,
-  https://arxiv.org/abs/2604.07244.
-- S. M. Koksbang, "First observational constraints on cosmic backreaction over
-  an extended redshift range", arXiv:2604.11249, 2026,
-  https://arxiv.org/abs/2604.11249.
-- C. C. Dyer and R. C. Roeder, "The Distance-Redshift Relation for Universes
-  with no Intergalactic Medium", Astrophysical Journal, 1972.
+[1] A. Heinesen and T. Clifton, "Observational Tests for Distinguishing Classes
+of Cosmological Models", arXiv:2604.07244, 2026.
+https://arxiv.org/abs/2604.07244
+
+[2] S. M. Koksbang, "First observational constraints on cosmic backreaction
+over an extended redshift range", arXiv:2604.11249, 2026.
+https://arxiv.org/abs/2604.11249
+
+[3] C. C. Dyer and R. C. Roeder, "The Distance-Redshift Relation for Universes
+with No Intergalactic Medium", The Astrophysical Journal 174, L115-L117,
+1972.
+
+[4] C. C. Dyer and R. C. Roeder, "Distance-Redshift Relations for Universes
+with Some Intergalactic Medium", The Astrophysical Journal 180, L31-L34,
+1973.
