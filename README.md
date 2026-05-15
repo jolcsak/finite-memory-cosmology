@@ -33,9 +33,11 @@ The paper must not claim that:
 ## Files
 
 - `draft.md`: initial manuscript scaffold.
+- `finite_memory_projection_corrections.pdf`: rendered PDF of the current draft.
 - `outline.md`: section-level outline.
 - `status.md`: claim discipline, current strength, and blockers.
 - `reproducibility.md`: regeneration commands and source packets.
+- `make_pdf.py`: lightweight ReportLab PDF renderer.
 - `evidence/claim_matrix.csv`: distilled allowed/forbidden claims.
 - `evidence/result_summary.csv`: minimal result table for the draft.
 - `evidence/source_packet_manifest.csv`: source packet map.

@@ -41,3 +41,15 @@ full covariance likelihood: not included / not complete
 direct published likelihood comparison: not included / not complete
 full Tau Core theory: intentionally not included
 ```
+
+## Generate PDF
+
+```bash
+python make_pdf.py
+```
+
+Generated output:
+
+```text
+finite_memory_projection_corrections.pdf
+```
