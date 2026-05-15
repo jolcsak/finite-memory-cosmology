@@ -91,9 +91,18 @@ $$
 $$
 
 The variable `x` should be read operationally: it orders the accumulated
-projected response along the diagnostic light-path/reconstruction depth. It is
-not a claim that the full underlying theory has been reconstructed from the
-paper.
+projected response along the diagnostic light-path/reconstruction depth. In the
+point-level diagnostic table below, the public packet uses the provisional
+mapping
+
+$$
+x = z/z_{\max}
+$$
+
+over the tested SN+BAO redshift grid. This is a redshift-ordered depth proxy,
+not a final physical identification of `x` with redshift. A stronger future
+paper should replace this proxy with a frozen mapping from comoving distance,
+optical depth, or the likelihood-native reconstruction coordinate.
 
 The finite-memory correction is a multiplicative response operator acting on a
 baseline projected shape:
@@ -116,6 +125,10 @@ The baseline shape $K_1(x)$ is not treated as a fitted degree of freedom in
 this note. The comparison is organized around whether the locked multiplicative
 memory factor can keep the projected K2 response inside the reconstructed
 diagnostic envelope under the predeclared amplitude and shape rules.
+The public version of the paper therefore treats $K_1(x)$ as part of the
+distilled diagnostic packet rather than as a newly derived cosmological law.
+This is a limitation: the present manuscript tests the finite-memory
+multiplier, not a complete derivation of the baseline response.
 
 Several assumptions are therefore intentionally modest:
 
@@ -224,6 +237,13 @@ cosmology "must" use a cubic memory law. It says that, inside this deliberately
 small power-kernel audit, the cubic law is the locked representative that
 survives the predeclared admissibility rules.
 
+The numerical thresholds in these two rules should also be read conservatively.
+They are method thresholds for the present diagnostic packet, not universal
+constants. A later likelihood paper should report threshold-sensitivity runs
+showing whether the cubic representative remains selected when the low-depth
+visibility and endpoint-concentration cuts are varied within a reasonable
+predeclared range.
+
 ## 6. Diagnostic Targets And Gate Policy
 
 The targets used here are reconstructed diagnostic envelopes rather than direct
@@ -322,6 +342,28 @@ SN+BAO strict median-sign: localized warning
 SN+BAO sign-stability-aware gate: diagnostic pass
 claim level: theory-method diagnostic, not observational discovery
 ```
+
+The point-level SN+BAO audit makes the gate policy more explicit. The source
+for all rows is the no-degree-4 robust SN+BAO envelope, and the `x` column uses
+the provisional mapping $x=z/z_{\max}$ over this grid.
+
+| z | x | median | envelope | K2 | signs all/no4/d2 | stable? | residual/sigma | decision |
+|---:|---:|---:|---|---:|---|---|---:|---|
+| 0.5100 | 0.2189 | 0.7758 | [-1.9013, 2.7631] | 2.0829 | +/+/+ | yes | -0.0350 | PASS_SIGN_STABLE |
+| 0.7375 | 0.3165 | 0.5350 | [-1.5846, 1.2890] | 1.3251 | +/+/+ | yes | -0.0565 | PASS_SIGN_STABLE |
+| 0.9650 | 0.4142 | 0.0906 | [-1.1023, 0.8498] | 0.7717 | +/+/+ | yes | 0.1417 | PASS_SIGN_STABLE |
+| 1.1925 | 0.5118 | -0.0762 | [-0.6967, 0.6401] | 0.3938 | -/-/+ | no | 0.1971 | PASS_UNSTABLE_LIKELIHOOD |
+| 1.4200 | 0.6094 | 0.1560 | [-0.1773, 0.2784] | 0.2554 | +/+/+ | yes | 0.0421 | PASS_SIGN_STABLE |
+| 1.6475 | 0.7071 | 0.0445 | [-0.1959, 0.9010] | 0.4717 | +/+/+ | yes | 0.2289 | PASS_SIGN_STABLE |
+| 1.8750 | 0.8047 | 0.9081 | [-0.7426, 2.1026] | 1.1769 | +/+/- | no | -0.1356 | PASS_UNSTABLE_LIKELIHOOD |
+| 2.1025 | 0.9024 | 1.4662 | [-1.3295, 3.9935] | 2.5013 | +/+/- | no | -0.0636 | PASS_UNSTABLE_LIKELIHOOD |
+| 2.3300 | 1.0000 | 2.1225 | [-1.9217, 6.4719] | 4.5595 | +/+/- | no | 0.0079 | PASS_UNSTABLE_LIKELIHOOD |
+
+This table also makes the main weakness visible. The pass decisions are not
+equivalent to a strong likelihood preference: several envelopes are broad, and
+four of the nine SN+BAO points are sign-unstable. The table supports the narrow
+claim that the locked K2 response does not violate the current diagnostic gate;
+it does not support an observational discovery claim.
 
 ## 9. Robustness And Falsification Criteria
 
@@ -442,6 +484,7 @@ diagnostic evidence files are:
 
 - `evidence/result_summary.csv`;
 - `evidence/claim_matrix.csv`;
+- `evidence/diagnostic_point_audit.csv`;
 - `evidence/source_packet_manifest.csv`.
 
 The PDF can be regenerated locally with:

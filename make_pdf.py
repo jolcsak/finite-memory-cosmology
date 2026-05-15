@@ -95,25 +95,37 @@ def styles() -> dict[str, ParagraphStyle]:
             spaceBefore=4,
             spaceAfter=8,
         ),
+        "table_header": ParagraphStyle(
+            "TableHeader",
+            parent=base["BodyText"],
+            fontName="Helvetica-Bold",
+            fontSize=6.5,
+            leading=7.8,
+        ),
+        "table_cell": ParagraphStyle(
+            "TableCell",
+            parent=base["BodyText"],
+            fontName="Helvetica",
+            fontSize=6.2,
+            leading=7.4,
+        ),
     }
 
 
-def parse_table(lines: list[str], idx: int) -> tuple[Table, int]:
+def parse_table(lines: list[str], idx: int, style_map: dict[str, ParagraphStyle]) -> tuple[Table, int]:
     rows = []
     while idx < len(lines) and lines[idx].strip().startswith("|"):
         line = lines[idx].strip()
         cells = [cell.strip() for cell in line.strip("|").split("|")]
         if not all(re.fullmatch(r":?-{3,}:?", cell) for cell in cells):
-            rows.append([inline_markup(cell) for cell in cells])
+            row_style = style_map["table_header"] if not rows else style_map["table_cell"]
+            rows.append([Paragraph(inline_markup(cell), row_style) for cell in cells])
         idx += 1
-    table = Table(rows, repeatRows=1, hAlign="LEFT")
+    col_width = (7.1 * inch) / max(len(rows[0]), 1)
+    table = Table(rows, repeatRows=1, hAlign="LEFT", colWidths=[col_width] * len(rows[0]))
     table.setStyle(
         TableStyle(
             [
-                ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
-                ("FONTNAME", (0, 1), (-1, -1), "Helvetica"),
-                ("FONTSIZE", (0, 0), (-1, -1), 7.6),
-                ("LEADING", (0, 0), (-1, -1), 9.3),
                 ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#eeeeee")),
                 ("GRID", (0, 0), (-1, -1), 0.25, colors.HexColor("#cccccc")),
                 ("VALIGN", (0, 0), (-1, -1), "TOP"),
@@ -196,7 +208,7 @@ def render() -> None:
             continue
         if stripped.startswith("|"):
             flush_paragraph()
-            table, idx = parse_table(lines, idx)
+            table, idx = parse_table(lines, idx, s)
             story.append(table)
             story.append(Spacer(1, 8))
             continue

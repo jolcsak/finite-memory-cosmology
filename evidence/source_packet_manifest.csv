@@ -6,5 +6,5 @@ packet_v135,Locked K2 critical BAO-only window,distilled into evidence/result_su
 packet_v138,SN+BAO localized dip audit,distilled into draft/status
 packet_v139,SN+BAO robust target redefinition,distilled into draft/status
 packet_v141,No-degree4 relaxed diagonal proxy,distilled into draft/status
-packet_v142,Sign-stability weighted gate,distilled into evidence/result_summary.csv
+packet_v142,Sign-stability weighted gate,distilled into evidence/result_summary.csv and evidence/diagnostic_point_audit.csv
 packet_v143,Claim matrix and readiness,distilled into evidence/claim_matrix.csv

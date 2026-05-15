@@ -11,6 +11,7 @@ The included evidence tables are manuscript-facing summaries:
 ```text
 evidence/claim_matrix.csv
 evidence/result_summary.csv
+evidence/diagnostic_point_audit.csv
 evidence/source_packet_manifest.csv
 ```
 

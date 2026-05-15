@@ -40,6 +40,7 @@ The paper must not claim that:
 - `make_pdf.py`: lightweight ReportLab PDF renderer with display-equation support.
 - `evidence/claim_matrix.csv`: distilled allowed/forbidden claims.
 - `evidence/result_summary.csv`: minimal result table for the draft.
+- `evidence/diagnostic_point_audit.csv`: point-level SN+BAO diagnostic gate table.
 - `evidence/source_packet_manifest.csv`: source packet map.
 
 ## Regenerate The PDF
