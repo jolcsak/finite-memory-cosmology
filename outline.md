@@ -46,7 +46,7 @@ Report:
 - BAO-only full diagnostic overlap;
 - strict SN+BAO sign tension;
 - localization of the `z=1.1925` dip;
-- sign-stability-aware SN+BAO pass.
+- sign-stability-aware SN+BAO non-violation status.
 
 ## 5. Limitations And Next Likelihood
 

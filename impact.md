@@ -3,15 +3,17 @@
 ## Main Significance
 
 This note is designed as a theory-method diagnostic paper, not as an
-observational discovery claim. Its main contribution is a disciplined effective
-operator:
+observational discovery claim. Its main contribution is the disciplined
+diagnostic framework around a bounded effective operator:
 
 ```text
 W(x) = 1 + rho*x^3,  rho <= 4
 ```
 
 The operator is bounded before comparison with reconstructed cosmological
-diagnostics, which makes it stronger than a post-hoc amplitude fit.
+diagnostics, which makes it stronger than a post-hoc amplitude fit. The cubic
+formula is not the whole contribution; the more durable contribution is the
+anti-overfitting protocol around it.
 
 ## Why It May Matter
 
@@ -23,6 +25,7 @@ diagnostics, which makes it stronger than a post-hoc amplitude fit.
   silently overclaiming.
 - It creates a bridge from speculative projection theory to reproducible
   cosmological stress tests.
+- It gives a concrete example of reconstruction-sensitive sign handling.
 
 ## Expected Audience
 

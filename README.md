@@ -7,8 +7,9 @@ requiring the full Tau Core program.
 
 ## Status
 
-Working paper scaffold. This is ready for a theory-method diagnostic draft, not
-for an observational discovery claim.
+Release-candidate method note / research-program bridge. This is suitable for a
+disciplined diagnostic-proposal release, not for an observational discovery
+claim.
 
 ## Scope
 
@@ -19,8 +20,8 @@ W(x) = 1 + rho*x^3,  rho <= 4
 ```
 
 defines a bounded diagnostic correction window that is compatible with the
-BAO-only reconstructed consistency envelope and passes a reconstruction-aware
-SN+BAO sign-stability gate.
+BAO-only reconstructed consistency envelope and remains non-violating under a
+reconstruction-aware SN+BAO sign-stability gate.
 
 The paper must not claim that:
 

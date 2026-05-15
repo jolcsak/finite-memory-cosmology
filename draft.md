@@ -14,8 +14,9 @@ backreaction-aware distance consistency reconstructions. In a BAO-only
 diagnostic reconstruction, the locked K2 window overlaps the full target
 envelope. In an SN+BAO source-split stress test, strict median-sign matching
 exhibits a localized tension; a reconstruction-aware sign-stability gate
-resolves this tension without widening the K2 window. The result motivates a
-future full-likelihood comparison while preserving explicit claim boundaries.
+keeps this tension classified as non-violating without widening the K2 window.
+The result motivates a future full-likelihood comparison while preserving
+explicit claim boundaries.
 
 ## 1. Introduction
 
@@ -79,6 +80,11 @@ free-form fitting function. Its amplitude and shape are constrained before the
 diagnostic comparison. This is the main methodological point: the operator is
 allowed to be phenomenological, but it is not allowed to become arbitrarily
 elastic after seeing the reconstructed envelope.
+
+For this reason, the most important object in the paper is not the specific
+cubic formula by itself. The stronger contribution is the combination of a
+bounded response window, a predeclared admissibility rule, and a
+reconstruction-stability-aware interpretation policy.
 
 ## 3. Minimal Effective Disclosure
 
@@ -258,7 +264,7 @@ controls and extrapolations       -> stress diagnostics only
 
 Operationally, let $y_i$ denote the reconstructed diagnostic median at the
 tested point $i$, and let $[L_i,U_i]$ denote the corresponding reconstructed
-diagnostic envelope. A locked prediction $\hat y_i$ passes the envelope gate
+diagnostic envelope. A locked prediction $\hat y_i$ is envelope-compatible
 when
 
 $$
@@ -286,7 +292,7 @@ median-sign gate asks whether the prediction follows the sign of one
 reconstructed median. The sign-stability gate asks a weaker but better-posed
 question: whether the prediction violates a sign that is stable across
 reconstruction choices. Only the second question is used as a paper-level
-diagnostic pass/fail rule here.
+diagnostic violation/non-violation rule here.
 
 ## 7. Source-Split Interpretation
 
@@ -322,8 +328,8 @@ The minimal result summary is:
 |---|---:|---|
 | BAO-only window overlap | 1.0000000000 | Locked K2 overlaps the BAO-only diagnostic envelope at all tested points. |
 | BAO-only best curve overlap | 1.0000000000 | The best locked K2 BAO-only curve remains inside the envelope. |
-| SN+BAO sign-stable pass fraction | 1.0000000000 | All sign-stable SN+BAO points pass exact sign matching. |
-| SN+BAO sign-unstable likelihood pass fraction | 1.0000000000 | All sign-unstable SN+BAO points pass envelope / diagonal residual handling. |
+| SN+BAO sign-stable non-violation fraction | 1.0000000000 | All sign-stable SN+BAO points are non-violating under exact sign matching. |
+| SN+BAO sign-unstable compatibility fraction | 1.0000000000 | All sign-unstable SN+BAO points remain envelope-compatible under diagonal residual handling. |
 
 The strict SN+BAO median-sign test exhibits a localized tension near
 `z=1.1925`. The diagnostic audit shows that this point is method-degree
@@ -331,15 +337,15 @@ sensitive: lower-degree reconstructions are positive, while higher-degree
 reconstructions pull the median negative. The locked K2 prediction does not
 follow the negative median sign at that point, but it remains inside the broad
 diagnostic envelope with a small normalized residual. Under the sign-stability
-gate, this is treated as a likelihood/envelope pass rather than a hard
-sign-failure.
+gate, this is treated as an envelope-compatible warning rather than a hard
+sign violation.
 
 The current status is therefore:
 
 ```text
-BAO-only: diagnostic pass
+BAO-only: diagnostic compatibility
 SN+BAO strict median-sign: localized warning
-SN+BAO sign-stability-aware gate: diagnostic pass
+SN+BAO sign-stability-aware gate: non-violating diagnostic status
 claim level: theory-method diagnostic, not observational discovery
 ```
 
@@ -349,17 +355,17 @@ the provisional mapping $x=z/z_{\max}$ over this grid.
 
 | z | x | median | envelope | K2 | signs all/no4/d2 | stable? | residual/sigma | decision |
 |---:|---:|---:|---|---:|---|---|---:|---|
-| 0.5100 | 0.2189 | 0.7758 | [-1.9013, 2.7631] | 2.0829 | +/+/+ | yes | -0.0350 | PASS_SIGN_STABLE |
-| 0.7375 | 0.3165 | 0.5350 | [-1.5846, 1.2890] | 1.3251 | +/+/+ | yes | -0.0565 | PASS_SIGN_STABLE |
-| 0.9650 | 0.4142 | 0.0906 | [-1.1023, 0.8498] | 0.7717 | +/+/+ | yes | 0.1417 | PASS_SIGN_STABLE |
-| 1.1925 | 0.5118 | -0.0762 | [-0.6967, 0.6401] | 0.3938 | -/-/+ | no | 0.1971 | PASS_UNSTABLE_LIKELIHOOD |
-| 1.4200 | 0.6094 | 0.1560 | [-0.1773, 0.2784] | 0.2554 | +/+/+ | yes | 0.0421 | PASS_SIGN_STABLE |
-| 1.6475 | 0.7071 | 0.0445 | [-0.1959, 0.9010] | 0.4717 | +/+/+ | yes | 0.2289 | PASS_SIGN_STABLE |
-| 1.8750 | 0.8047 | 0.9081 | [-0.7426, 2.1026] | 1.1769 | +/+/- | no | -0.1356 | PASS_UNSTABLE_LIKELIHOOD |
-| 2.1025 | 0.9024 | 1.4662 | [-1.3295, 3.9935] | 2.5013 | +/+/- | no | -0.0636 | PASS_UNSTABLE_LIKELIHOOD |
-| 2.3300 | 1.0000 | 2.1225 | [-1.9217, 6.4719] | 4.5595 | +/+/- | no | 0.0079 | PASS_UNSTABLE_LIKELIHOOD |
+| 0.5100 | 0.2189 | 0.7758 | [-1.9013, 2.7631] | 2.0829 | +/+/+ | yes | -0.0350 | NONVIOLATING_SIGN_STABLE |
+| 0.7375 | 0.3165 | 0.5350 | [-1.5846, 1.2890] | 1.3251 | +/+/+ | yes | -0.0565 | NONVIOLATING_SIGN_STABLE |
+| 0.9650 | 0.4142 | 0.0906 | [-1.1023, 0.8498] | 0.7717 | +/+/+ | yes | 0.1417 | NONVIOLATING_SIGN_STABLE |
+| 1.1925 | 0.5118 | -0.0762 | [-0.6967, 0.6401] | 0.3938 | -/-/+ | no | 0.1971 | COMPATIBLE_SIGN_UNSTABLE |
+| 1.4200 | 0.6094 | 0.1560 | [-0.1773, 0.2784] | 0.2554 | +/+/+ | yes | 0.0421 | NONVIOLATING_SIGN_STABLE |
+| 1.6475 | 0.7071 | 0.0445 | [-0.1959, 0.9010] | 0.4717 | +/+/+ | yes | 0.2289 | NONVIOLATING_SIGN_STABLE |
+| 1.8750 | 0.8047 | 0.9081 | [-0.7426, 2.1026] | 1.1769 | +/+/- | no | -0.1356 | COMPATIBLE_SIGN_UNSTABLE |
+| 2.1025 | 0.9024 | 1.4662 | [-1.3295, 3.9935] | 2.5013 | +/+/- | no | -0.0636 | COMPATIBLE_SIGN_UNSTABLE |
+| 2.3300 | 1.0000 | 2.1225 | [-1.9217, 6.4719] | 4.5595 | +/+/- | no | 0.0079 | COMPATIBLE_SIGN_UNSTABLE |
 
-This table also makes the main weakness visible. The pass decisions are not
+This table also makes the main weakness visible. The non-violation decisions are not
 equivalent to a strong likelihood preference: several envelopes are broad, and
 four of the nine SN+BAO points are sign-unstable. The table supports the narrow
 claim that the locked K2 response does not violate the current diagnostic gate;
@@ -466,14 +472,15 @@ cosmological consistency envelopes without fitting the memory depth after the
 fact.
 
 Within the distilled diagnostic packet used here, the locked K2 window is
-compatible with the BAO-only envelope and passes the reconstruction-aware
-SN+BAO sign-stability gate. The strict SN+BAO median-sign warning is retained
-as a limitation rather than hidden: it marks a reconstruction-sensitive point
-that should be revisited with direct likelihood products.
+compatible with the BAO-only envelope and remains non-violating under the
+reconstruction-aware SN+BAO sign-stability gate. The strict SN+BAO median-sign
+warning is retained as a limitation rather than hidden: it marks a
+reconstruction-sensitive point that should be revisited with direct likelihood
+products.
 
-The result is therefore a paper-ready method claim, not an observational
-discovery claim. Its next meaningful test is a covariance-aware likelihood
-comparison against public likelihood data.
+The result is therefore a release-candidate method-note claim, not an
+observational discovery claim. Its next meaningful test is a covariance-aware
+likelihood comparison against public likelihood data.
 
 ## 14. Data And Code Availability
 
