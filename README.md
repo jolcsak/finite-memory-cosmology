@@ -37,7 +37,7 @@ The paper must not claim that:
 - `outline.md`: section-level outline.
 - `status.md`: claim discipline, current strength, and blockers.
 - `reproducibility.md`: regeneration commands and source packets.
-- `make_pdf.py`: lightweight ReportLab PDF renderer.
+- `make_pdf.py`: lightweight ReportLab PDF renderer with display-equation support.
 - `evidence/claim_matrix.csv`: distilled allowed/forbidden claims.
 - `evidence/result_summary.csv`: minimal result table for the draft.
 - `evidence/source_packet_manifest.csv`: source packet map.

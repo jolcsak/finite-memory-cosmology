@@ -53,3 +53,7 @@ Generated output:
 ```text
 finite_memory_projection_corrections.pdf
 ```
+
+The renderer supports the small subset of Markdown used in `draft.md`,
+including fenced code blocks, tables, bullets, and `$$ ... $$` display
+equation blocks.

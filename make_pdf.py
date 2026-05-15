@@ -25,6 +25,7 @@ def xml_escape(text: str) -> str:
 def inline_markup(text: str) -> str:
     text = xml_escape(text)
     text = re.sub(r"`([^`]+)`", r"<font name='Courier'>\1</font>", text)
+    text = re.sub(r"\$([^$]+)\$", r"<font name='Times-Italic'>\1</font>", text)
     text = re.sub(r"\*\*([^*]+)\*\*", r"<b>\1</b>", text)
     return text
 
@@ -80,6 +81,20 @@ def styles() -> dict[str, ParagraphStyle]:
             spaceBefore=4,
             spaceAfter=8,
         ),
+        "equation": ParagraphStyle(
+            "Equation",
+            parent=base["BodyText"],
+            fontName="Times-Italic",
+            fontSize=10.5,
+            leading=14,
+            alignment=1,
+            backColor=colors.HexColor("#fafafa"),
+            borderColor=colors.HexColor("#e0e0e0"),
+            borderWidth=0.3,
+            borderPadding=5,
+            spaceBefore=4,
+            spaceAfter=8,
+        ),
     }
 
 
@@ -118,7 +133,9 @@ def render() -> None:
     lines = SOURCE.read_text(encoding="utf-8").splitlines()
     idx = 0
     in_code = False
+    in_equation = False
     code_lines: list[str] = []
+    equation_lines: list[str] = []
     paragraph: list[str] = []
 
     def flush_paragraph() -> None:
@@ -129,6 +146,21 @@ def render() -> None:
     while idx < len(lines):
         line = lines[idx]
         stripped = line.strip()
+        if stripped == "$$":
+            if in_equation:
+                equation = "<br/>".join(inline_markup(item) for item in equation_lines)
+                story.append(Paragraph(equation, s["equation"]))
+                equation_lines = []
+                in_equation = False
+            else:
+                flush_paragraph()
+                in_equation = True
+            idx += 1
+            continue
+        if in_equation:
+            equation_lines.append(line)
+            idx += 1
+            continue
         if stripped.startswith("```"):
             if in_code:
                 story.append(Preformatted("\n".join(code_lines), s["code"]))

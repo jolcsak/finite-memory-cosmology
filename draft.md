@@ -4,8 +4,8 @@
 
 We introduce a bounded finite-memory projection operator for diagnostic
 cosmological consistency tests. The operator is formulated as an effective
-projection response over normalized depth, `W(x)=1+rho*x^3`, with a passive
-memory-budget bound `rho<=4`. The construction is not presented as a complete
+projection response over normalized depth, $W(x)=1+\rho x^3$, with a passive
+memory-budget bound $\rho \leq 4$. The construction is not presented as a complete
 cosmological model or an observational detection. It is instead a disciplined
 diagnostic module for comparing projected response shapes against
 backreaction-aware distance consistency reconstructions. In a BAO-only
@@ -47,9 +47,9 @@ Only the effective module needed for this note is used. We assume that an
 observed consistency residual can be represented as a projected response over a
 normalized depth coordinate,
 
-```text
-0 <= x <= 1.
-```
+$$
+0 \leq x \leq 1 .
+$$
 
 The variable `x` should be read operationally: it orders the accumulated
 projected response along the diagnostic light-path/reconstruction depth. It is
@@ -59,15 +59,15 @@ paper.
 The finite-memory correction is a multiplicative response operator acting on a
 baseline projected shape:
 
-```text
-K2(x) = W(x) K1(x).
-```
+$$
+K_2(x) = W(x)K_1(x).
+$$
 
 This note studies the locked K2 form
 
-```text
-W(x) = 1 + rho*x^3.
-```
+$$
+W(x) = 1 + \rho x^3 .
+$$
 
 The form is intentionally simple. Its purpose is to test whether a bounded,
 delayed, monotone memory response can be made reproducible before comparison
@@ -78,23 +78,23 @@ with diagnostic envelopes.
 The passive memory-budget condition requires the accumulated tail response not
 to exceed the unit local response budget. For the cubic operator,
 
-```text
-E_tail = Integral_0^1 rho*x^3 dx = rho/4.
-```
+$$
+E_{\mathrm{tail}} = \int_0^1 \rho x^3\,dx = \frac{\rho}{4}.
+$$
 
 The unit baseline budget is
 
-```text
-E_0 = Integral_0^1 1 dx = 1.
-```
+$$
+E_0 = \int_0^1 1\,dx = 1.
+$$
 
 Passivity requires
 
-```text
-E_tail <= E_0,
-rho/4 <= 1,
-rho <= 4.
-```
+$$
+E_{\mathrm{tail}} \leq E_0,\qquad
+\frac{\rho}{4} \leq 1,\qquad
+\rho \leq 4 .
+$$
 
 This is the key discipline of the construction: the memory depth is bounded
 before the diagnostic comparison. The bound is not chosen by looking for the
@@ -104,24 +104,27 @@ best residual fit.
 
 The cubic kernel is selected from the power-kernel family
 
-```text
-W_p(x) = 1 + rho*x^p.
-```
+$$
+W_p(x) = 1 + \rho x^p .
+$$
 
 For this family, the passive memory rule generalizes to
 
-```text
-Integral_0^1 rho*x^p dx <= Integral_0^1 1 dx,
-rho/(p+1) <= 1,
-rho <= p+1.
-```
+$$
+\int_0^1 \rho x^p\,dx \leq \int_0^1 1\,dx,\qquad
+\frac{\rho}{p+1} \leq 1,\qquad
+\rho \leq p+1 .
+$$
 
 Two additional effective-operator rules select the usable shape:
 
-```text
-low-depth invisibility: Delta W_p(0.25) = (p+1)*0.25^p <= 0.10
-no endpoint spike:     Integral_0.75^1 (p+1)*x^p dx <= 0.75
-```
+$$
+\Delta W_p(0.25) = (p+1)0.25^p \leq 0.10 ,
+$$
+
+$$
+\int_{0.75}^{1} (p+1)x^p\,dx \leq 0.75 .
+$$
 
 The first rule rejects kernels that disturb the already locked low-depth
 response too early. The second rejects kernels whose memory budget collapses
@@ -131,11 +134,11 @@ The cubic `p=3` case is the remaining admissible power-kernel representative.
 
 The locked diagnostic window is therefore
 
-```text
-W(x) = 1 + rho*x^3,
-eta in [0.25, 0.50],
-rho in [3.00, 4.00].
-```
+$$
+W(x) = 1 + \rho x^3,\qquad
+\eta \in [0.25,0.50],\qquad
+\rho \in [3.00,4.00].
+$$
 
 ## 5. Diagnostic Targets And Gate Policy
 
