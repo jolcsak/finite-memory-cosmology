@@ -2,8 +2,7 @@
 
 ## Current Status
 
-Release-candidate method note / research-program bridge. Not ready for an
-observational discovery paper.
+Release-candidate method note. Not ready for an observational discovery paper.
 
 ## Allowed Core Claim
 
@@ -17,18 +16,18 @@ reconstruction-aware SN+BAO sign-stability gate.
 ## Claims To Avoid
 
 ```text
-Tau Core is proven.
-The K2 operator is the final Tau cosmology law.
+Any background theory is proven.
+The K2 operator is the final cosmological law.
 The result rules out cosmic backreaction.
 The current tests are a full covariance likelihood.
 The current branch is an observational detection.
-The paper reconstructs or discloses the full Tau Core.
+The paper reconstructs a full background theory.
 ```
 
 ## Current Strengths
 
 - The K2 operator is predeclared and bounded before the final diagnostic tests.
-- The memory-depth bound is Tau-side and not chosen by residual fitting.
+- The memory-depth bound is predeclared and not chosen by residual fitting.
 - The cubic kernel is selected by low-depth invisibility and endpoint-smoothness
   rules.
 - BAO-only diagnostics are compatible with the full reconstructed envelope.
@@ -46,11 +45,11 @@ The paper reconstructs or discloses the full Tau Core.
   optical-depth, or likelihood-native coordinate mapping.
 - Publish threshold-sensitivity checks for the low-depth and endpoint
   admissibility gates.
-- Keep the Tau Core disclosure minimal: effective module only.
+- Keep the paper self-contained: bounded diagnostic module only.
 
 ## Paper Readiness Estimate
 
 ```text
-theory-method diagnostic paper: 60-70%
+theory-method diagnostic paper: 70-80%
 observational discovery paper: 20-30%
 ```

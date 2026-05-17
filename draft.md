@@ -43,10 +43,10 @@ lesson sharp: a projected cosmological residual must be tested against optical,
 geometrical, and reconstruction degeneracies before it is interpreted.
 
 This note develops a deliberately narrow finite-memory projection diagnostic
-that can be placed alongside such tests. The objective is not to disclose or
-validate a full underlying theory. Instead, we ask whether a predeclared,
-bounded projection-memory operator can define a reproducible diagnostic window
-and survive basic source-split stress tests.
+that can be placed alongside such tests. The objective is not to validate a full
+physical model. Instead, we ask whether a predeclared, bounded
+projection-memory operator can define a reproducible diagnostic window and
+survive basic source-split stress tests.
 
 The contribution is therefore threefold. First, we define a finite-memory
 operator whose amplitude is bounded before comparison with reconstructed
@@ -86,7 +86,7 @@ cubic formula by itself. The stronger contribution is the combination of a
 bounded response window, a predeclared admissibility rule, and a
 reconstruction-stability-aware interpretation policy.
 
-## 3. Minimal Effective Disclosure
+## 3. Effective Diagnostic Module
 
 Only the effective module needed for this note is used. We assume that an
 observed consistency residual can be represented as a projected response over a
@@ -98,17 +98,16 @@ $$
 
 The variable `x` should be read operationally: it orders the accumulated
 projected response along the diagnostic light-path/reconstruction depth. In the
-point-level diagnostic table below, the public packet uses the provisional
-mapping
+point-level diagnostic table below, the public packet uses the frozen
+operational mapping
 
 $$
 x = z/z_{\max}
 $$
 
-over the tested SN+BAO redshift grid. This is a redshift-ordered depth proxy,
-not a final physical identification of `x` with redshift. A stronger future
-paper should replace this proxy with a frozen mapping from comoving distance,
-optical depth, or the likelihood-native reconstruction coordinate.
+over the tested SN+BAO redshift grid. This is a redshift-ordered diagnostic
+coordinate, not a final physical identification of `x` with redshift and not a
+new cosmological observable.
 
 The finite-memory correction is a multiplicative response operator acting on a
 baseline projected shape:
@@ -127,14 +126,43 @@ The form is intentionally simple. Its purpose is to test whether a bounded,
 delayed, monotone memory response can be made reproducible before comparison
 with diagnostic envelopes.
 
-The baseline shape $K_1(x)$ is not treated as a fitted degree of freedom in
-this note. The comparison is organized around whether the locked multiplicative
-memory factor can keep the projected K2 response inside the reconstructed
-diagnostic envelope under the predeclared amplitude and shape rules.
-The public version of the paper therefore treats $K_1(x)$ as part of the
-distilled diagnostic packet rather than as a newly derived cosmological law.
-This is a limitation: the present manuscript tests the finite-memory
-multiplier, not a complete derivation of the baseline response.
+### Robustness And Coordinate Dependence
+
+The present note is coordinate-explicit. Its numerical tables use
+
+$$
+x = z/z_{\max}
+$$
+
+as the current frozen operational diagnostic mapping. This choice is useful
+because it is simple, reproducible, and tied directly to the public redshift
+grid. It is not claimed to be a coordinate-invariant or physically final
+description of cosmological depth.
+
+Two natural robustness mappings are left for the next stage:
+
+$$
+x = \chi(z)/\chi(z_{\max}),
+$$
+
+where $\chi$ is a comoving-distance coordinate under a frozen reference
+cosmology, and an optical-depth-like coordinate in which the depth variable is
+weighted by foreground or visibility information. A likelihood-native mapping,
+using the reconstruction grid or likelihood coordinate directly, is the Phase II
+target. Until such mappings are implemented, the method note should be read as
+a coordinate-explicit diagnostic proposal only.
+
+### K1 Baseline Provenance
+
+The baseline shape $K_1(x)$ is a frozen diagnostic baseline imported from the
+distilled reconstruction packet. It is not fitted in this note. The comparison
+is organized around whether the locked multiplicative memory factor can keep
+the projected K2 response inside the reconstructed diagnostic envelope under
+the predeclared amplitude and shape rules.
+
+The present manuscript therefore tests the finite-memory multiplier on top of a
+fixed diagnostic baseline. It does not prove that $K_1(x)$ is unique,
+physically final, or likelihood-preferred.
 
 Several assumptions are therefore intentionally modest:
 
@@ -143,13 +171,12 @@ Several assumptions are therefore intentionally modest:
 - the operator $W(x)$ is an effective response, not a complete field equation;
 - the reconstructed envelopes are treated as diagnostic targets, not as final
   likelihood surfaces;
-- the public module does not require the reader to accept any hidden parent
-  ontology.
+- the public module does not require the reader to accept any broader
+  background theory.
 
 These restrictions make the paper weaker than a full theory paper, but stronger
 as a falsifiable method note. A reader can reject or test the effective module
-without needing to adjudicate the larger research program from which it was
-distilled.
+without needing to adjudicate any larger research program.
 
 ## 4. Passive Memory Bound
 
@@ -187,8 +214,8 @@ uncontrolled late-depth amplification.
 
 This bound also gives an immediate falsification handle. If a diagnostic
 comparison requires $\rho > 4$ in order to remain compatible with the target
-envelope, the locked passive operator has failed. The model is not then
-rescued by expanding the allowed amplitude range.
+envelope, the locked passive operator is not supported in its present form. The
+model is not then rescued by expanding the allowed amplitude range.
 
 ## 5. Kernel-Shape Selection
 
@@ -250,6 +277,21 @@ showing whether the cubic representative remains selected when the low-depth
 visibility and endpoint-concentration cuts are varied within a reasonable
 predeclared range.
 
+The current threshold-sensitivity policy is summarized as follows:
+
+| Threshold set | Low-depth limit | Endpoint budget | Admissible simple kernels | Interpretation |
+|---|---|---|---|---|
+| baseline | $\Delta W_p(0.25)\leq 0.10$ | endpoint $\leq 0.75$ | $p=3$ | cubic is the current audit-selected representative |
+| relaxed low-depth | $\Delta W_p(0.25)\leq 0.15$ | endpoint $\leq 0.75$ | $p=2,3$ | more low-depth visibility broadens the set |
+| strict low-depth | $\Delta W_p(0.25)\leq 0.075$ | endpoint $\leq 0.75$ | $p=3$ | cubic remains in this simple scan |
+| relaxed endpoint | $\Delta W_p(0.25)\leq 0.10$ | endpoint $\leq 0.85$ | $p=3,4$ | endpoint relaxation admits a later kernel |
+| strict endpoint | $\Delta W_p(0.25)\leq 0.10$ | endpoint $\leq 0.60$ | none | the simple power-kernel family can be emptied |
+
+This means the cubic kernel is not a fundamental cosmological law. It is the
+baseline representative selected by the current audit thresholds. Relaxing or
+tightening those thresholds can broaden, shift, or empty the admissible simple
+power-kernel set.
+
 ## 6. Diagnostic Targets And Gate Policy
 
 The targets used here are reconstructed diagnostic envelopes rather than direct
@@ -302,7 +344,7 @@ while SN+BAO combinations mix distance ladder information and reconstruction
 choices in a way that can sharpen or destabilize local features. A finite
 memory operator should therefore not be judged only by whether it follows a
 single reconstructed median. It should also be judged by whether a claimed
-failure is robust across reconstruction families.
+tension is robust across reconstruction families.
 
 In the present packet, this is exactly where the localized SN+BAO warning
 appears. The strict median-sign comparison identifies a point near `z=1.1925`
@@ -317,8 +359,8 @@ either direction too aggressively. It should not be hidden, because it is a
 real stress point for the diagnostic. It should also not be promoted to a hard
 falsification, because the sign being tested is reconstruction-sensitive. The
 paper-level statement is therefore deliberately asymmetric: the point remains a
-warning, but not a locked failure under the envelope and normalized-residual
-gate.
+warning, but not a locked diagnostic violation under the envelope and
+normalized-residual gate.
 
 ## 8. Results
 
@@ -411,8 +453,8 @@ cosmological model. Its value is methodological:
   backreaction tests;
 - it demonstrates a way to handle sign-unstable reconstructed diagnostics
   without silently overclaiming;
-- it provides a small public module that can be tested independently of the
-  full underlying theory program.
+- it provides a small public module that can be tested independently as a
+  diagnostic proposal.
 
 The near-term audience is likely narrow: researchers interested in
 cosmological consistency tests, backreaction, light propagation, and
@@ -428,7 +470,7 @@ This manuscript is a theory-method diagnostic note. It does not claim:
 - a direct observational detection;
 - exclusion of cosmic backreaction;
 - a complete derivation of cosmology from an underlying action;
-- disclosure or reconstruction of a full Tau Core theory.
+- proof or reconstruction of a full background theory.
 
 The next stage is a paper-aligned likelihood comparison using covariance or
 shrinkage-covariance products and direct published likelihood data where
@@ -438,11 +480,11 @@ The most important limitation is that the public packet contains distilled
 diagnostic summaries rather than the full reconstruction pipeline. This is
 acceptable for a method note whose purpose is to define a bounded operator and
 state claim boundaries, but it is not sufficient for an observational paper.
-The current manuscript should therefore be read as a bridge: it turns an
-internal cosmology-branch result into a public, testable effective module, while
-leaving the stronger likelihood comparison for a later release.
+The current manuscript should therefore be read as a bridge from a compact
+diagnostic construction to a public, testable effective module, while leaving
+the stronger likelihood comparison for a later release.
 
-## 12. Future Likelihood Program
+## 12. Phase II Roadmap
 
 The next technical step is to replace the diagonal/envelope diagnostic with a
 likelihood-level comparison. At minimum, this requires public likelihood or
@@ -460,6 +502,15 @@ diagnostic -> compare locked window -> report posterior support or rejection
 This future comparison should not widen the K2 window unless a new paper is
 explicitly framed as a different model. The main value of the present note is
 that it fixes a small target before the stronger test is performed.
+
+The Phase II work package should therefore include:
+
+- covariance-aware likelihood ingestion;
+- a public reconstruction benchmark;
+- coordinate-mapping robustness across redshift-normalized, comoving-distance,
+  optical-depth-like, and likelihood-native coordinates;
+- direct comparison against BAO-only and SN+BAO reconstruction families;
+- a frozen benchmark challenge in which the K2 window is locked before testing.
 
 ## 13. Conclusion
 
@@ -492,7 +543,11 @@ diagnostic evidence files are:
 - `evidence/result_summary.csv`;
 - `evidence/claim_matrix.csv`;
 - `evidence/diagnostic_point_audit.csv`;
-- `evidence/source_packet_manifest.csv`.
+- `evidence/source_packet_manifest.csv`;
+- `evidence/coordinate_mapping_policy.csv`;
+- `evidence/threshold_sensitivity.csv`;
+- `evidence/threshold_kernel_outcomes.csv`;
+- `evidence/open_problem_resolution_matrix.csv`.
 
 The PDF can be regenerated locally with:
 
